@@ -1794,7 +1794,7 @@ function webViewerUpdateViewarea(evt) {
   PDFViewerApplication.toolbar.updateLoadingIndicatorState(loading);
 
   // update url
-  this.pdfHistory.pushCurrentPosition();
+  PDFViewerApplication.pdfHistory.pushCurrentPosition();
 }
 
 function webViewerScrollModeChanged(evt) {
