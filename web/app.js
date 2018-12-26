@@ -1792,6 +1792,9 @@ function webViewerUpdateViewarea(evt) {
     PDFViewerApplication.pdfViewer.getPageView(PDFViewerApplication.page - 1);
   let loading = currentPage.renderingState !== RenderingStates.FINISHED;
   PDFViewerApplication.toolbar.updateLoadingIndicatorState(loading);
+
+  // update url
+  this.pdfHistory.pushCurrentPosition();
 }
 
 function webViewerScrollModeChanged(evt) {
