@@ -1616,6 +1616,10 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
       PDFViewerApplication.setTitleUsingUrl(file);
       let xhr = new XMLHttpRequest();
       xhr.onload = function() {
+        console.info('xhr.response');
+        console.log(xhr.response);
+        console.info('new Uint8Array(xhr.response)');
+        console.log(new Uint8Array(xhr.response));
         PDFViewerApplication.open(new Uint8Array(xhr.response));
       };
       try {
@@ -1629,6 +1633,8 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
     }
 
     if (file) {
+        console.info('file');
+        console.log(file);
       PDFViewerApplication.open(file);
     }
   };
@@ -1851,6 +1857,8 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
       if (file.name) {
         url = { url, originalUrl: file.name, };
       }
+      console.info('url');
+      console.log(url);
       PDFViewerApplication.open(url);
     } else {
       PDFViewerApplication.setTitleUsingUrl(file.name);
@@ -1858,6 +1866,10 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
       let fileReader = new FileReader();
       fileReader.onload = function webViewerChangeFileReaderOnload(evt) {
         let buffer = evt.target.result;
+        console.info('buffer');
+        console.log(buffer);
+        console.info('new Uint8Array(buffer)');
+        console.log(new Uint8Array(buffer));
         PDFViewerApplication.open(new Uint8Array(buffer));
       };
       fileReader.readAsArrayBuffer(file);
